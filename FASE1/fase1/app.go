@@ -3,6 +3,8 @@ package main
 import (
 	"context"
 	"fmt"
+	"github.com/shirou/gopsutil/cpu"
+	"strconv"
 )
 
 // App struct
@@ -15,13 +17,17 @@ func NewApp() *App {
 	return &App{}
 }
 
-// startup is called when the app starts. The context is saved
-// so we can call the runtime methods
 func (a *App) startup(ctx context.Context) {
 	a.ctx = ctx
 }
 
-// Greet returns a greeting for the given name
-func (a *App) Greet(name string) string {
-	return fmt.Sprintf("Hello %s, It's show time!", name)
+func (a *App) GetCPUPercentage() string {
+	percent, err := cpu.Percent(0, false)
+	if err != nil {
+		return "Error"
+	}
+	//Data percentage to JSON
+	per := strconv.Itoa(int(percent[0]))
+	fmt.Println(per)
+	return per
 }
