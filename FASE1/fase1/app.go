@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/shirou/gopsutil/cpu"
+	"github.com/shirou/gopsutil/disk"
 	"strconv"
 )
 
@@ -28,6 +29,18 @@ func (a *App) GetCPUPercentage() string {
 	}
 	//Data percentage to JSON
 	per := strconv.Itoa(int(percent[0]))
+	fmt.Println(per)
+	return per
+}
+
+func (a *App) GetDiskPercentage() string {
+	usage, err := disk.Usage("/")
+	if err != nil {
+		return "Error"
+
+	}
+	//Data percentage to JSON
+	per := strconv.Itoa(int(usage.UsedPercent))
 	fmt.Println(per)
 	return per
 }

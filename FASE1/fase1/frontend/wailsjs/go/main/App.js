@@ -5,3 +5,7 @@
 export function GetCPUPercentage() {
   return window['go']['main']['App']['GetCPUPercentage']();
 }
+
+export function GetDiskPercentage() {
+  return window['go']['main']['App']['GetDiskPercentage']();
+}
