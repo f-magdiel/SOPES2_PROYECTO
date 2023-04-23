@@ -9,3 +9,7 @@ export function GetCPUPercentage() {
 export function GetDiskPercentage() {
   return window['go']['main']['App']['GetDiskPercentage']();
 }
+
+export function GetRAMPercentage() {
+  return window['go']['main']['App']['GetRAMPercentage']();
+}

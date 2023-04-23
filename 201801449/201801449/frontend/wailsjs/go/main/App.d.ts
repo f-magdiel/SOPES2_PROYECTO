@@ -4,3 +4,5 @@
 export function GetCPUPercentage():Promise<string>;
 
 export function GetDiskPercentage():Promise<string>;
+
+export function GetRAMPercentage():Promise<string>;
