@@ -10,6 +10,10 @@ export function GetDiskPercentage() {
   return window['go']['main']['App']['GetDiskPercentage']();
 }
 
+export function GetPorts(arg1, arg2) {
+  return window['go']['main']['App']['GetPorts'](arg1, arg2);
+}
+
 export function GetRAMPercentage() {
   return window['go']['main']['App']['GetRAMPercentage']();
 }

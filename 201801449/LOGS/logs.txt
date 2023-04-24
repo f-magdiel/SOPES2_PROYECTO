@@ -1,0 +1,12 @@
+23-04-232311  23:29:36 /media/fmagdiel/USB_MEDIA/ CREATE,ISDIR hola
+
+23-04-232311  23:29:48 /media/fmagdiel/USB_MEDIA/.Trash-1000/info/ CREATE hola.trashinfo
+
+23-04-23031  23:31:09 /media/fmagdiel/USB_MEDIA/ CREATE,ISDIR simon
+
+23-04-23031  23:31:11 /media/fmagdiel/USB_MEDIA/.Trash-1000/info/ CREATE simon.trashinfo
+
+2023-04-23T23:33:44-06:00 /media/fmagdiel/USB_MEDIA/ CREATE,ISDIR perro
+
+2023-04-23T23:33:47-06:00 /media/fmagdiel/USB_MEDIA/.Trash-1000/info/ CREATE perro.trashinfo
+

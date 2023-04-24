@@ -5,4 +5,6 @@ export function GetCPUPercentage():Promise<string>;
 
 export function GetDiskPercentage():Promise<string>;
 
+export function GetPorts(arg1:string,arg2:number):Promise<number>;
+
 export function GetRAMPercentage():Promise<string>;

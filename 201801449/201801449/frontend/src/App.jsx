@@ -6,6 +6,7 @@ import AreaChart from "./components/AreaChart.jsx";
 import {GetCPUPercentage} from "../wailsjs/go/main/App.js";
 import {GetDiskPercentage} from "../wailsjs/go/main/App.js";
 import {GetRAMPercentage} from "../wailsjs/go/main/App.js";
+import {GetPorts} from "../wailsjs/go/main/App.js";
 
 function App() {
 
@@ -36,6 +37,29 @@ function App() {
     function getRAM() {
         GetRAMPercentage().then(updateRAM);
     }
+
+    //Para los puertos
+    const [password, setPassword] = useState("");
+    const [persmission, setPermission] = useState(-5);
+
+    const [statusUsb, setstatusUsb] = useState([]);
+    const updateStatusUsb = (result) => setstatusUsb(result);
+    //funcion para obtener los puertos
+    function getPortsBloquear() {
+        // En el metodo GETPorts se envia la contraseña y el permiso
+        GetPorts(password,0).then(updateStatusUsb)
+        console.log(statusUsb)
+
+    }
+    function getPortsDesbloquear() {
+        // En el metodo GETPorts se envia la contraseña y el permiso
+        GetPorts(password,1).then(setPermission)
+
+    }
+
+    const handleChange = (event) => {
+        setPassword(event.target.value);
+    };
 
     useEffect(() => {
         const ac = setInterval(() => {
@@ -73,6 +97,13 @@ function App() {
                     <AreaChart name={name3} values={values3}/>
                 </div>
 
+            <div>
+                <h1>BLOQUE/DESBLOQUE PUERTOS USB</h1>
+                <input type="text" value={password} onChange={handleChange} />
+                <br />
+                <button onClick={getPortsBloquear}>Bloquear</button>
+                <button onClick={getPortsDesbloquear}>Desbloquear</button>
+            </div>
 
         </div>
     )
